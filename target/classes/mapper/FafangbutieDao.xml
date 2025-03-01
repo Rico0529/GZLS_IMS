@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FafangbutieDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FafangbutieEntity" id="fafangbutieMap">
+        <result property="xiangmumingcheng" column="xiangmumingcheng"/>
+        <result property="xiangmufengmian" column="xiangmufengmian"/>
+        <result property="fafangzijin" column="fafangzijin"/>
+        <result property="fafangshijian" column="fafangshijian"/>
+        <result property="fafangneirong" column="fafangneirong"/>
+        <result property="fafangxiangqing" column="fafangxiangqing"/>
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="fuzerenxingming" column="fuzerenxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FafangbutieVO" >
+		SELECT * FROM fafangbutie  fafangbutie         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FafangbutieVO" >
+		SELECT  fafangbutie.* FROM fafangbutie  fafangbutie 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FafangbutieView" >
+
+		SELECT  fafangbutie.* FROM fafangbutie  fafangbutie 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FafangbutieView" >
+		SELECT * FROM fafangbutie  fafangbutie <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
